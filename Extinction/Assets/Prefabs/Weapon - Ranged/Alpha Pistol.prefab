@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 730713816932523702}
   - component: {fileID: 730713816932523701}
   m_Layer: 0
-  m_Name: Alpha Gun
+  m_Name: Alpha Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,13 +167,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ded0213d9b61e94fa70f02fa0324ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_WeaponName: Alpha
   m_Projectile: {fileID: 7814495497223562313, guid: 40851c1b6c12e4f4a979f5f8cfd5236f,
     type: 3}
   m_FireTransform: {fileID: 730713816150206603}
   m_MaxAmmo: 120
+  m_LocalCurrentAmmo: 0
   m_ClipSize: 8
+  m_LocalClipAmmo: 0
   m_Speed: 500
-  m_Damage: 5
+  m_Damage: 19
   m_CanFire: 1
   m_IsReloading: 0
 --- !u!1 &6776595972691744347

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class WeaponRanagedBehaviour : MonoBehaviour
 {
-    private GameObject m_ThisGun;
+    //private GameObject m_ThisGun;
+
 
     [Header("Weapon Specifics")]
+    public string m_WeaponName;
+
     [Tooltip("m_Projectile needs to be a child of this object and named 'Projectile'")]
     [SerializeField]
     private GameObject m_Projectile;
@@ -19,14 +22,12 @@ public class WeaponRanagedBehaviour : MonoBehaviour
     //[Tooltip()]
     private int m_MaxAmmo = 0;
 
-    //[SerializeField]
-    private int m_CurrentAmmo = 0;
+    public int m_LocalCurrentAmmo = 0;
 
     [SerializeField]
     private int m_ClipSize = 0;
 
-    //[SerializeField]
-    private int m_ClipAmmo = 0;
+    public int m_LocalClipAmmo = 0;
 
     [Header("Projectile Properties")]
     [SerializeField]
@@ -48,8 +49,8 @@ public class WeaponRanagedBehaviour : MonoBehaviour
     void Start()
     {
 
-        m_CurrentAmmo = m_MaxAmmo;
-        m_ClipAmmo = m_ClipSize;
+        m_LocalCurrentAmmo = m_MaxAmmo;
+        m_LocalClipAmmo = m_ClipSize;
 
         //m_FireTransform = transform.Find("FireTransformObject").gameObject;
         //m_Projectile = transform.Find("Projectile").gameObject;
@@ -77,7 +78,7 @@ public class WeaponRanagedBehaviour : MonoBehaviour
 
     private void onFire()
     {
-        if (Input.GetButton("Fire1") && m_CanFire == true && m_ClipAmmo != 0)
+        if (Input.GetButton("Fire1") && m_CanFire == true && m_LocalClipAmmo != 0)
         {
             m_IsReloading = false;
             
@@ -87,7 +88,7 @@ public class WeaponRanagedBehaviour : MonoBehaviour
             m_FiredProjectileRigidbody.AddForce(m_FiredProjectile.transform.forward * m_Speed /* Time.deltaTime*/);
             
 
-            m_ClipAmmo -= 1;
+            m_LocalClipAmmo -= 1;
         }
         else if (m_IsReloading == true)
         {
@@ -97,17 +98,17 @@ public class WeaponRanagedBehaviour : MonoBehaviour
 
     private void onReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && m_CurrentAmmo != 0 && m_ClipAmmo != m_ClipSize)
+        if (Input.GetKeyDown(KeyCode.R) && m_LocalCurrentAmmo != 0 && m_LocalClipAmmo != m_ClipSize)
         {
             m_IsReloading = true;
             int reloadAmount;
 
             if (m_CanFire == true)
             {
-                reloadAmount = m_ClipSize - m_ClipAmmo;
+                reloadAmount = m_ClipSize - m_LocalClipAmmo;
 
-                m_CurrentAmmo -= reloadAmount;
-                m_ClipAmmo += reloadAmount;
+                m_LocalCurrentAmmo -= reloadAmount;
+                m_LocalClipAmmo += reloadAmount;
 
             }
 
