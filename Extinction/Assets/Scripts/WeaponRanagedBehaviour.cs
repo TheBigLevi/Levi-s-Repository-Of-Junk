@@ -52,7 +52,7 @@ public class WeaponRanagedBehaviour : MonoBehaviour
         m_LocalCurrentAmmo = m_MaxAmmo;
         m_LocalClipAmmo = m_ClipSize;
 
-        //m_FireTransform = transform.Find("FireTransformObject").gameObject;
+        m_FireTransform = transform.Find("FireTransformObject").gameObject;
         //m_Projectile = transform.Find("Projectile").gameObject;
 
         onEquip();

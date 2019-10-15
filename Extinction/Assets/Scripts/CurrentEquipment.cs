@@ -8,10 +8,8 @@ public class CurrentEquipment : MonoBehaviour
     [SerializeField]
     private GameObject[] m_WeaponArray;
 
-    [SerializeField]
     private GameObject m_AmmoDisplay;
 
-    [SerializeField]
     private GameObject m_WeaponDisplay;
 
     [SerializeField]
@@ -27,7 +25,14 @@ public class CurrentEquipment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //m_WeaponArray = new GameObject[2];
+
         m_WeaponArray[1].SetActive(false);
+
+        m_WeaponArray[0] = GameObject.FindWithTag("Default Weapon");
+
+        m_AmmoDisplay = GameObject.FindWithTag("Ammo Display");
+        m_WeaponDisplay = GameObject.FindWithTag("Weapon Name Display");
     }
 
     // Update is called once per frame
@@ -46,7 +51,7 @@ public class CurrentEquipment : MonoBehaviour
         {
             //m_WeaponArray = new GameObject[2];
 
-            
+
             if (arrayPos >= m_WeaponArray.Length - 1)
             {
                 m_WeaponArray[arrayPos].SetActive(false);

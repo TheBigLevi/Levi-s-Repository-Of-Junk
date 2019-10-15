@@ -79,3 +79,7 @@ function loadLogin() {
 function loadRegister() {
     self.location = "register.html";
 }
+
+function subscriptionSelect() {
+
+}
