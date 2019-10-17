@@ -10,6 +10,11 @@ public class WeaponRanagedBehaviour : MonoBehaviour
     [Header("Weapon Specifics")]
     public string m_WeaponName;
 
+    private enum WeaponType { SingleShot, SemiAutomatic, Burst, Automatic, ShotGun, RPG }
+
+    [SerializeField]
+    private WeaponType behaviourType;
+
     [Tooltip("m_Projectile needs to be a child of this object and named 'Projectile'")]
     [SerializeField]
     private GameObject m_Projectile;
@@ -98,14 +103,14 @@ public class WeaponRanagedBehaviour : MonoBehaviour
 
     private void onReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && m_LocalCurrentAmmo != 0 && m_LocalClipAmmo != m_ClipSize)
+        if (Input.GetKeyDown(KeyCode.R) && m_LocalCurrentAmmo > 0 && m_LocalClipAmmo != m_ClipSize)
         {
             m_IsReloading = true;
             int reloadAmount;
 
             if (m_CanFire == true)
             {
-                reloadAmount = m_ClipSize - m_LocalClipAmmo;
+                reloadAmount = Mathf.Min(m_ClipSize - m_LocalClipAmmo, m_LocalCurrentAmmo);
 
                 m_LocalCurrentAmmo -= reloadAmount;
                 m_LocalClipAmmo += reloadAmount;

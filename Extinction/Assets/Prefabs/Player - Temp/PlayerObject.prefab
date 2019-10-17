@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca5a7128281f7c48a4137e341ba070f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MouseSensitivity: 5
 --- !u!1 &4116492570772860016
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,10 +107,11 @@ GameObject:
   - component: {fileID: 4116492570772860031}
   - component: {fileID: 914331098}
   - component: {fileID: 914331096}
+  - component: {fileID: 4750584024547891630}
   - component: {fileID: 914331097}
   m_Layer: 0
   m_Name: PlayerObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +162,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3ab6855bc203c45808377d49e2652a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerSpeed: 0.5
+  m_PlayerSpeed: 0.3
+  m_SprintMultiplier: 2
+  m_Gravity: 0.5
+--- !u!114 &4750584024547891630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4116492570772860016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9cf4c3f14a9bc44bbde4b990a48fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartingHelath: 75
+  m_CurrentHealth: 0
+  m_HealthSlider: {fileID: 0}
+  m_DamageImage: {fileID: 0}
+  m_ImageColor: {r: 1, g: 0, b: 0, a: 0.1}
+  m_DeathClip: {fileID: 0}
 --- !u!114 &914331097
 MonoBehaviour:
   m_ObjectHideFlags: 0

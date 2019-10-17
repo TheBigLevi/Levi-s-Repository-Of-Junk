@@ -19,9 +19,13 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController m_Controller;
 
+    private Animator m_Anim;
+
     private void Awake()
     {
         m_Controller = GetComponent<CharacterController>();
+
+        m_Anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
