@@ -77,7 +77,7 @@ public class CurrentEquipment : MonoBehaviour
         //Creates local variables from the weapons independent stats
         clipAmmo = m_WeaponScript.m_LocalClipAmmo;
         currentAmmo = m_WeaponScript.m_LocalCurrentAmmo;
-        weaponName = m_WeaponScript.m_WeaponName;
+        weaponName = m_WeaponScript.m_CurrentWeapon.m_WeaponName;
 
         //Assigns loacl varaibles to players GUI
         m_AmmoDisplay.GetComponent<Text>().text = clipAmmo + " / " + currentAmmo;
