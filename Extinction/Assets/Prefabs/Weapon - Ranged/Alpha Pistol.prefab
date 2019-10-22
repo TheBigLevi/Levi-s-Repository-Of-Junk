@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 730713816932523702}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730713816420099172
 GameObject:
@@ -61,7 +61,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.8}
   m_Children: []
   m_Father: {fileID: 730713816932523702}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &730713816420099168
 MeshFilter:
@@ -130,10 +130,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730713816932523702}
-  - component: {fileID: 730713816932523701}
   m_Layer: 0
   m_Name: Alpha Pistol
-  m_TagString: Untagged
+  m_TagString: Default Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,36 +148,12 @@ Transform:
   m_LocalPosition: {x: 0.04848385, y: -0.18721485, z: 0.08610344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 730713816150206708}
   - {fileID: 730713816420099173}
   - {fileID: 1745786319632751873}
-  - {fileID: 730713816150206708}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &730713816932523701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730713816932523700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ded0213d9b61e94fa70f02fa0324ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_WeaponName: Alpha
-  m_Projectile: {fileID: 7814495497223562313, guid: 40851c1b6c12e4f4a979f5f8cfd5236f,
-    type: 3}
-  m_FireTransform: {fileID: 730713816150206603}
-  m_MaxAmmo: 120
-  m_LocalCurrentAmmo: 0
-  m_ClipSize: 8
-  m_LocalClipAmmo: 0
-  m_Speed: 500
-  m_Damage: 19
-  m_CanFire: 1
-  m_IsReloading: 0
 --- !u!1 &6776595972691744347
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +185,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.4}
   m_Children: []
   m_Father: {fileID: 730713816932523702}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &9190850767686530871
 MeshFilter:

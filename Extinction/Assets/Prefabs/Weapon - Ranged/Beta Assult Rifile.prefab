@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8058652ba5c8a4fb13a03d9b678396, type: 2}
+  - {fileID: 2100000, guid: 3a7354f221a526b428a29ecfc34a3b3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8058652ba5c8a4fb13a03d9b678396, type: 2}
+  - {fileID: 2100000, guid: 3a7354f221a526b428a29ecfc34a3b3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -270,7 +270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f8058652ba5c8a4fb13a03d9b678396, type: 2}
+  - {fileID: 2100000, guid: 3a7354f221a526b428a29ecfc34a3b3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -312,7 +312,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8662685267032488533}
-  - component: {fileID: 8662685267032488534}
   m_Layer: 0
   m_Name: Beta Assult Rifile
   m_TagString: Untagged
@@ -338,27 +337,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8662685267032488534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8662685267032488535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ded0213d9b61e94fa70f02fa0324ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_WeaponName: Beta
-  m_Projectile: {fileID: 7814495497223562313, guid: 40851c1b6c12e4f4a979f5f8cfd5236f,
-    type: 3}
-  m_FireTransform: {fileID: 8662685265059040360}
-  m_MaxAmmo: 125
-  m_LocalCurrentAmmo: 0
-  m_ClipSize: 25
-  m_LocalClipAmmo: 0
-  m_Speed: 700
-  m_Damage: 8
-  m_CanFire: 1
-  m_IsReloading: 0

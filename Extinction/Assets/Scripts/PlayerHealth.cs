@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     private PlayerController m_PlayerMovement;
 
     // TODO -  Get this to change dependent on weapon
-    private WeaponRanagedBehaviour m_WeaponRangedBehaviour;
+    private PlayerAttack m_WeaponBehaviour;
 
     private bool m_IsDead;
 
@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
         m_Anim = GetComponent<Animator>();
         m_PlayerAudio = GetComponent<AudioSource>();
         m_PlayerMovement = GetComponent<PlayerController>();
-        m_WeaponRangedBehaviour = GetComponent<WeaponRanagedBehaviour>();
+        m_WeaponBehaviour = GetComponent<PlayerAttack>();
 
         m_CurrentHealth = m_StartingHealth;
 
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            m_DamageImage.color = Color.Lerp(m_DamageImage.color, Color.clear, m_ImageSpeed * Time.deltaTime);
+            //m_DamageImage.color = Color.Lerp(m_DamageImage.color, Color.clear, m_ImageSpeed * Time.deltaTime);
         }
 
         m_Damaged = false;
@@ -94,7 +94,7 @@ public class PlayerHealth : MonoBehaviour
         m_PlayerAudio.Play();
 
         m_PlayerMovement.enabled = false;
-        m_WeaponRangedBehaviour.enabled = false;
+        m_WeaponBehaviour.enabled = false;
     }
 }
 

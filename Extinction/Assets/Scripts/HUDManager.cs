@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CurrentEquipment : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] m_WeaponArray;
+    private WeaponObject[] m_WeaponArray;
 
     private GameObject m_AmmoDisplay;
 
@@ -27,9 +27,9 @@ public class CurrentEquipment : MonoBehaviour
     {
         //m_WeaponArray = new GameObject[2];
 
-        m_WeaponArray[1].SetActive(false);
+        //m_WeaponArray[1].SetActive(false);
 
-        m_WeaponArray[0] = GameObject.FindWithTag("Default Weapon");
+        //m_WeaponArray[0] = GameObject.FindWithTag("Default Weapon");
 
         m_AmmoDisplay = GameObject.FindWithTag("Ammo Display");
         m_WeaponDisplay = GameObject.FindWithTag("Weapon Name Display");
@@ -39,13 +39,13 @@ public class CurrentEquipment : MonoBehaviour
     void Update()
     {
 
-        cycleEquipment();
+        //cycleEquipment();
 
-        updateUI();
+        //updateUI();
 
     }
 
-    private void cycleEquipment()
+    /*private void cycleEquipment()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -82,6 +82,6 @@ public class CurrentEquipment : MonoBehaviour
         //Assigns loacl varaibles to players GUI
         m_AmmoDisplay.GetComponent<Text>().text = clipAmmo + " / " + currentAmmo;
         m_WeaponDisplay.GetComponent<Text>().text = weaponName;
-    }
+    }*/
 }
 
