@@ -129,10 +129,10 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator ReloadTimer()
     {
-        yield return new WaitForSeconds(m_CurrentWeapon.m_ReloadTime);
+        yield return new WaitForSecondsRealtime(m_CurrentWeapon.m_ReloadTime);
     }
     private IEnumerator TimeBetweenShots()
     {
-        yield return new WaitForSeconds(m_CurrentWeapon.m_FireRateTimer);
+        yield return new WaitForSecondsRealtime(m_CurrentWeapon.m_FireRateTimer);
     }
 }
