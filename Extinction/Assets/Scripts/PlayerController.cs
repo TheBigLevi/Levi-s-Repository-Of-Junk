@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Checks if player is grounded and stops player movemnt if not
-        if (m_MoveFlags == CollisionFlags.Below)
+        if ((m_MoveFlags & CollisionFlags.Below) != 0)
         {
             m_MoveDirection = (horizontal * transform.right) + (vertical * transform.forward);
             m_MoveDirection *= m_PlayerSpeed;

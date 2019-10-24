@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2254040516839273547}
   - component: {fileID: 4318761559123215775}
   - component: {fileID: 9143171184508745107}
+  - component: {fileID: 1734035466}
   m_Layer: 0
   m_Name: EnemyObject
   m_TagString: Untagged
@@ -45,17 +46,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 3599200891371263204}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Speed: 1.8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0.92
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2254040516839273547
@@ -102,6 +103,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TimeBetweenAttacks: 0.5
   m_AttackDamage: 25
+--- !u!136 &1734035466
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599200891371263204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3979108593482835081
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1282242865039838079
 Transform:
   m_ObjectHideFlags: 0
@@ -234,6 +249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 327845621b9a7f6429b71b6014447501, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2475cd1d81971574e8aed1d87d7f6944, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 327845621b9a7f6429b71b6014447501, type: 3}
 --- !u!4 &7551805018069021489 stripped

@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Image m_DamageImage;
 
+    [SerializeField]
     private float m_ImageSpeed = 5f;
     
     [SerializeField]

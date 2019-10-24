@@ -54,8 +54,10 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_PlayerHUD.transform.Find("Weapon Name").GetComponent<Text>().text = m_CurrentWeapon.m_WeaponName;
-        m_PlayerHUD.transform.Find("Ammo").GetComponent<Text>().text = m_LocalClipAmmo + " / " + m_LocalCurrentAmmo;
+
+        m_PlayerHUD.transform.Find("WeaponInfo").Find("Weapon Name").GetComponent<Text>().text = m_CurrentWeapon.m_WeaponName;
+        m_PlayerHUD.transform.Find("WeaponInfo").Find("Ammo").GetComponent<Text>().text = m_LocalClipAmmo + " / " + m_LocalCurrentAmmo;
+
 
         onAttack();
 
