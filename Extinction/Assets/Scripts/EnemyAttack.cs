@@ -4,19 +4,19 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 
-    public float m_TimeBetweenAttacks = 0.5f;
+    public float m_TimeBetweenAttacks = 1f;
 
     public int m_AttackDamage = 25;
 
     private Animator m_Anim;
 
-    private GameObject m_Player;
+    public GameObject m_Player;
 
     private PlayerHealth m_PlayerHealth;
 
     private EnemyHealth m_EnemyHealth;
 
-    private bool m_PlayerInRange;
+    public bool m_PlayerInRange;
 
     private float m_Timer;
 
@@ -31,29 +31,13 @@ public class EnemyAttack : MonoBehaviour
         m_PlayerHealth = m_Player.GetComponent<PlayerHealth>();
 
         m_EnemyHealth = GetComponent<EnemyHealth>();
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == m_Player)
-        {
-            m_PlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == m_Player)
-        {
-            m_PlayerInRange = false;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_Timer += Time.deltaTime;
+        if(m_PlayerInRange)
+            m_Timer += Time.deltaTime;
 
         if (m_Timer >= m_TimeBetweenAttacks && m_PlayerInRange && m_EnemyHealth.m_CurrentHealth > 0)
         {

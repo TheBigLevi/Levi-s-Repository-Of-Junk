@@ -64,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            //m_DamageImage.color = Color.Lerp(m_DamageImage.color, Color.clear, m_ImageSpeed * Time.deltaTime);
+            m_DamageImage.color = Color.Lerp(m_DamageImage.color, Color.clear, m_ImageSpeed * Time.deltaTime);
         }
 
         m_Damaged = false;

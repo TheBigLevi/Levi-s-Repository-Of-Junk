@@ -24,8 +24,7 @@ public class CameraRotate : MonoBehaviour
 
     void Start()
     {
-        //Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -37,7 +36,7 @@ public class CameraRotate : MonoBehaviour
         if (EventSystem.current == null || EventSystem.current.IsPointerOverGameObject() == false)
         {
 			// right mouse button down to pan the camera
-            if (Input.GetMouseButton(1))
+            if (Input.mousePresent)
             {
                 float deltaX = Input.GetAxis("Mouse X") * 50;
                 float deltaY = Input.GetAxis("Mouse Y") * 50;
@@ -58,7 +57,7 @@ public class CameraRotate : MonoBehaviour
         // find the distance we want to be at, either full distance or on the surface behind us
         float dist = distance;
         RaycastHit hit;
-        if (Physics.Raycast(lookAtPosition, -transform.forward, out hit, distance))
+        if (Physics.Raycast(lookAtPosition, -transform.forward, out hit, distance, -1, QueryTriggerInteraction.Ignore))
         {
             if (hit.collider.gameObject != target.gameObject)
                 dist = hit.distance;
