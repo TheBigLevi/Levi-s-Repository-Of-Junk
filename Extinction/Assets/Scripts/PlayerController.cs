@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
     private float m_Gravity = 5f;
 
     private Vector3 m_MoveDirection;
+
     private CollisionFlags m_MoveFlags;
+
+    public bool m_IsMoving;
 
     private CharacterController m_Controller;
 
     private Animator m_Anim;
 
-    private float m_RotationSpeed = 0.5f;
+    public float m_RotationSpeed = 0.5f;
 
     private void Awake()
     {

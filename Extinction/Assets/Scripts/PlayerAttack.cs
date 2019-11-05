@@ -12,12 +12,21 @@ public class PlayerAttack : MonoBehaviour
     public GameObject m_WeaponTransform;
 
     [SerializeField]
+    private PlayerController m_PlayerController;
+
+    [SerializeField]
     private Canvas m_PlayerHUD;
 
     public GameObject[] m_WeaponsEquipped;
 
     public int[] TotalAmmo;
     public int[] ClipAmmo;
+
+    private Camera cam;
+
+    private Vector3 m_MoveDirection;
+
+
 
     // this is a property
     // its a get and set function that get treated like a variable!
@@ -38,6 +47,9 @@ public class PlayerAttack : MonoBehaviour
         TotalAmmo = new int[System.Enum.GetValues(typeof(WeaponObject.RangedType)).Length - 1];
         ClipAmmo = new int[System.Enum.GetValues(typeof(WeaponObject.RangedType)).Length - 1];
 
+        m_PlayerController = GetComponent<PlayerController>();
+
+        cam = Camera.main;
 
         if (m_CurrentWeapon.m_RangedType != WeaponObject.RangedType.Null)
         {
@@ -96,7 +108,27 @@ public class PlayerAttack : MonoBehaviour
 
             m_CurrentWeapon.m_FiredProjectile = Instantiate(m_CurrentWeapon.m_Projectile, m_CurrentWeapon.m_FireTransform.transform.position, m_CurrentWeapon.m_FireTransform.transform.rotation) as GameObject;
             Rigidbody m_FiredProjectileRigidbody = m_CurrentWeapon.m_FiredProjectile.GetComponent<Rigidbody>();
-            m_FiredProjectileRigidbody.AddForce(m_CurrentWeapon.m_FiredProjectile.transform.forward * m_CurrentWeapon.m_Speed /* Time.deltaTime*/);
+
+            Vector3 fireDirection = m_CurrentWeapon.m_FiredProjectile.transform.forward;
+
+            // find a raycast point under the mouse if we can
+            RaycastHit hit;
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 100, -1, QueryTriggerInteraction.Ignore))
+            {
+                fireDirection = (hit.point - m_CurrentWeapon.m_FireTransform.transform.position).normalized;
+            }
+
+            #region RotatePlayerOnAttack
+
+            Vector3 camForward = Camera.main.transform.forward;
+            camForward.y = 0;
+            camForward.Normalize();
+
+            transform.forward = Vector3.Lerp(gameObject.transform.forward, camForward, m_PlayerController.m_RotationSpeed);
+
+            #endregion
+
+            m_FiredProjectileRigidbody.AddForce(fireDirection * m_CurrentWeapon.m_Speed /* Time.deltaTime*/);
 
             m_LocalClipAmmo--;
         }

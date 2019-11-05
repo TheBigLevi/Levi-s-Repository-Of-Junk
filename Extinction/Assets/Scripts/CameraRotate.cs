@@ -11,6 +11,7 @@ public class CameraRotate : MonoBehaviour
     public float distanceMin = 2;
     public float distanceMax = 20;
     public float heightOffset = 1.5f;
+    public float horizontalOffset = 1.5f;
     public float zoomSpeed = 100;
 
     float actualDistance = 1000;
@@ -69,7 +70,7 @@ public class CameraRotate : MonoBehaviour
         else
             actualDistance = Mathf.MoveTowards(actualDistance, dist, 5 * Time.deltaTime); // relax back to full distance
 
-        transform.position = lookAtPosition - transform.forward * actualDistance;
+        transform.position = lookAtPosition - transform.forward * actualDistance + transform.right * horizontalOffset;
 
         lastMouseX = Input.mousePosition.x;
         lastMouseY = Input.mousePosition.y;
