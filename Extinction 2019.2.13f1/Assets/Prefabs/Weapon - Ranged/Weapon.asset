@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6144d96b207bbae44905a4fa7af20ab0, type: 3}
+  m_Name: Weapon
+  m_EditorClassIdentifier: 
+  m_WeaponName: 
+  m_RangedType: 0
+  m_MeleeType: 0
+  m_IsThrowable: 0
+  m_WeaponModelPrefab: {fileID: 0}
+  m_Projectile: {fileID: 0}
+  m_FireTransform: {fileID: 0}
+  m_MaxAmmo: 0
+  m_LocalCurrentAmmo: 0
+  m_ClipSize: 0
+  m_LocalClipAmmo: 0
+  m_Speed: 0
+  m_Damage: 0
+  m_CanFire: 1
+  m_IsReloading: 0
+  m_FiredProjectile: {fileID: 0}
